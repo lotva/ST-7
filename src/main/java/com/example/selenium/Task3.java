@@ -101,7 +101,8 @@ public final class Task3 {
     private static String buildSeparator(int[] widths) {
         StringBuilder sb = new StringBuilder("+");
         for (int w : widths) {
-            sb.append("-".repeat(w + 2)).append("+");
+            for (int i = 0; i < w + 2; i++) sb.append('-');
+            sb.append("+");
         }
         return sb.toString();
     }
