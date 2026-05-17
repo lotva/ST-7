@@ -20,11 +20,11 @@ public final class DriverFactory {
 
     private static void resolveDriverPath() {
         String current = System.getProperty("webdriver.chrome.driver");
-        if (current != null && !current.isBlank()) return;
+        if (current != null && !current.trim().isEmpty()) return;
 
         for (String envVar : new String[]{"WEBDRIVER_CHROME_DRIVER", "CHROMEWEBDRIVER"}) {
             String value = System.getenv(envVar);
-            if (value != null && !value.isBlank()) {
+            if (value != null && !value.trim().isEmpty()) {
                 System.setProperty("webdriver.chrome.driver", value.trim());
                 return;
             }
